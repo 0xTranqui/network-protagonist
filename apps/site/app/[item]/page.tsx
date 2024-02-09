@@ -18,6 +18,7 @@ import { match, P } from "ts-pattern";
 import * as React from "react";
 import { kv } from "@vercel/kv";
 import { getAddsMetadata } from "@/lib";
+import { RecentItems } from "components/server/RecentItems";
 // import ModelRenderer from 'components/client/renderers/ModelRenderer'
 
 const MarkdownRenderer = dynamic(
@@ -83,7 +84,7 @@ export default async function ItemPage({ params }: { params: { item: string } })
     .with(
       P.when((type) => isImage({ mimeType: type })),
       () => (
-        <div className="relative h-full md:mx-40">
+        <div className="relative h-[450px] md:h-full">
           <Image
             className="object-contain"
             src={contentUrl as string}
@@ -130,8 +131,9 @@ export default async function ItemPage({ params }: { params: { item: string } })
     ));
 
   return (
-    <Stack className="h-[calc(100dvh-38px)] md:flex-row border-2 border-green-500  md:items-center justify-center">
-      <div className="w-full h-full justify-center md:w-[78%]">{content}</div>
+    <Stack className="h-[calc(100dvh-76px)] place-content-start md:place-content-center md:flex-row">
+      <div className="w-full h-full md:w-[78%]">{content}</div>
+      {/* <RecentItems /> */}
       {/* <div className="md:w-[22%]">
         <ItemSidebar
           // @ts-ignore

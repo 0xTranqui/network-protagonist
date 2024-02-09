@@ -4,6 +4,7 @@ import { type MediaAssetObject, w3sUrlFromCid } from '@/lib'
 import { unixTimeConverter } from '@/utils'
 import { kv } from '@vercel/kv'
 import Link from 'next/link'
+import { truncateText } from '@/utils'
 
 export async function ItemCard({
   add,
@@ -29,7 +30,7 @@ export async function ItemCard({
         className="transition-all"
       >
         <Typography className="hover:underline">
-          {itemMetadata?.name ?? 'untitled'}
+          {truncateText(itemMetadata?.name as string, 25, false) ?? 'untitled'}
         </Typography>        
       </Link>
       {/* <Typography className="text-secondary-foreground">

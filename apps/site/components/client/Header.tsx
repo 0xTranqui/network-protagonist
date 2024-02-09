@@ -13,11 +13,11 @@ export function Header() {
   
   return (
     <Flex className='border-[1px] border-blue-500 w-fit'>
-      {/* <Link> */}
+      <Link href={"/"}>
         <Typography>
           networkprotagoni.st
         </Typography>      
-      {/* </Link> */}
+      </Link>
     </Flex>
   )
 

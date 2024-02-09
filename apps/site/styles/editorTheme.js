@@ -2,7 +2,7 @@ const colors = {
   almostBlack: '#2F2F2F',
   lightBlack: '#2F3336',
   almostWhite: '#E6E6E6',
-  white: '#FFF',
+  white: '#F8F8F8',
   white10: 'rgba(255, 255, 255, 0.1)',
   black: '#000',
   black10: 'rgba(0, 0, 0, 0.1)',
