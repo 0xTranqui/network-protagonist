@@ -1,10 +1,10 @@
-import { Flex, Stack, Typography } from '@/design-system'
+import { Stack, Typography } from '@/design-system'
 import { type Adds } from '@/gql'
 import { type MediaAssetObject, w3sUrlFromCid } from '@/lib'
 import { unixTimeConverter } from '@/utils'
 import { kv } from '@vercel/kv'
-import Image from 'next/image'
 import Link from 'next/link'
+import { truncateText } from '@/utils'
 
 export async function ItemCard({
   add,
@@ -29,8 +29,8 @@ export async function ItemCard({
         href={`/${itemIndex}`}
         className="transition-all"
       >
-        <Typography className="hover:underline">
-          {itemMetadata?.name ?? 'untitled'}
+        <Typography className="">
+          {truncateText(itemMetadata?.name as string, 25, false) ?? 'untitled'}
         </Typography>        
       </Link>
       {/* <Typography className="text-secondary-foreground">

@@ -18,6 +18,7 @@ import { match, P } from "ts-pattern";
 import * as React from "react";
 import { kv } from "@vercel/kv";
 import { getAddsMetadata } from "@/lib";
+import { RecentItems } from "components/server/RecentItems";
 // import ModelRenderer from 'components/client/renderers/ModelRenderer'
 
 const MarkdownRenderer = dynamic(
@@ -35,26 +36,28 @@ const PdfViewer = dynamic(
   { ssr: false }
 );
 
-export default async function ItemPage({ params }: { params: { id: string } }) {
+export default async function ItemPage({ params }: { params: { item: string } }) {
   const { channel } = await getChannelWithId({
-    id: "bafyreigav3dz3sstenuy3zhik6snbeasj7ntwecf7ffguuses5kevfipla",
+    id: "bafyreihuti6faf2z322aaodxs2gq4cvqoysraiz5gxjolmlwud3jemz2re",
   });
 
-  console.log("channel:", channel);
-  console.log("channel.adds.items:", channel?.adds?.items);
+  console.log("params.id", params.item)
+
+  // console.log("channel:", channel);
+  // console.log("channel.adds.items:", channel?.adds?.items);
 
   const totalItems = channel?.adds?.items?.length ?? 0;
-  console.log("totla items:", totalItems);
-  const reversedIndex = totalItems - Number(params.id);
+  // console.log("totla items:", totalItems);
+  const reversedIndex = totalItems - Number(params.item);
   console.log("reversedIndex:", reversedIndex);
-  const itemToRender = channel?.adds?.items?.[0];
+  const itemToRender = channel?.adds?.items?.[reversedIndex];
   console.log("item to render:", itemToRender);
 
-  const { itemPage } = await getItemPage({
-    id: `${"bafyreigav3dz3sstenuy3zhik6snbeasj7ntwecf7ffguuses5kevfipla"}/${
-      itemToRender?.itemId
-    }`,
-  });
+  // const { itemPage } = await getItemPage({
+  //   id: `${"bafyreigav3dz3sstenuy3zhik6snbeasj7ntwecf7ffguuses5kevfipla"}/${
+  //     itemToRender?.itemId
+  //   }`,
+  // });
 
   const itemMetadata = await kv.get<Pick<MediaAssetObject, "value">["value"]>(
     itemToRender?.item.uri as string
@@ -81,7 +84,7 @@ export default async function ItemPage({ params }: { params: { id: string } }) {
     .with(
       P.when((type) => isImage({ mimeType: type })),
       () => (
-        <div className="relative h-full md:mx-40">
+        <div className="relative h-[450px] md:h-full">
           <Image
             className="object-contain"
             src={contentUrl as string}
@@ -128,8 +131,9 @@ export default async function ItemPage({ params }: { params: { id: string } }) {
     ));
 
   return (
-    <Stack className="h-[calc(100dvh-38px)] md:flex-row">
+    <Stack className="h-full md:h-[calc(100dvh-76px)] place-content-start place-self-center md:place-content-center md:flex-row">
       <div className="w-full h-full md:w-[78%]">{content}</div>
+      {/* <RecentItems /> */}
       {/* <div className="md:w-[22%]">
         <ItemSidebar
           // @ts-ignore

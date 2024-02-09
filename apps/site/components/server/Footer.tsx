@@ -2,16 +2,15 @@ import { Flex, Typography } from '@/design-system'
 
 export function Footer() {
   return (
-    <Flex className="gap-2 w-full justify-end py-3">
-      <Typography className="text-muted-foreground items-center">
-        <span className="text-[14px] align-middle">&#169;</span> 2024 ·{' '}
+    <Flex className="absolute bottom-[20px] gap-2 w-full justify-start">
+      <Typography className="hover:cursor-pointer">
+        <span className="text-[14px]"></span>view on {' '}
         <a
-          className="hover:text-primary-foreground transition-all"
-          href="https://www.lifeworld.co"
+          href="https://www.river.ph/channel/bafyreigav3dz3sstenuy3zhik6snbeasj7ntwecf7ffguuses5kevfipla"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Lifeworld, Co.
+          river.ph
         </a>
       </Typography>
     </Flex>

@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import Editor from 'rich-markdown-editor'
 import { light as customTheme } from '../../../styles/editorTheme'
+import { fragmentMono } from 'app/fonts/fonts'
 
 type Props = {
   contentUrl: string
@@ -32,22 +33,23 @@ const MarkdownRenderer: React.FC<Props> = ({ contentUrl }) => {
   }, [contentUrl])
 
   return (
-    <div className="flex justify-center items-center py-4">
+    <div className="flex h-fit justify-center md:h-full">
       <div
-        className="flex h-full w-full justify-center"
+        className="flex h-fit md:h-full w-full justify-center"
         // style={{ height: '90vh', maxWidth: '55vw' }}
       >
-        {isLoading ? (
+        {/* {isLoading ? (
           <div>Loading...</div>
-        ) : (
+        ) : ( */}
           <Editor
-            className=" editor-body-text w-[620px]"
+            className={`${fragmentMono.variable} w-[400px] border-2`}
+            // style={{ fontFamily: fragmentMono.variable }}
             // disableExtensions={['container_notice']}
             value={content}
             readOnly
             theme={customTheme}
           />
-        )}
+        {/* )} */}
       </div>
     </div>
   )

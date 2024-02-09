@@ -2,7 +2,7 @@ const colors = {
   almostBlack: '#2F2F2F',
   lightBlack: '#2F3336',
   almostWhite: '#E6E6E6',
-  white: '#FFF',
+  white: '#F8F8F8',
   white10: 'rgba(255, 255, 255, 0.1)',
   black: '#000',
   black10: 'rgba(0, 0, 0, 0.1)',
@@ -16,7 +16,7 @@ const colors = {
 export const base = {
   ...colors,
   fontFamily:
-    "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen, Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif",
+    "",
   fontFamilyMono:
     "'SFMono-Regular',Consolas,'Liberation Mono', Menlo, Courier,monospace",
   fontWeight: 400,
