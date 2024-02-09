@@ -1,7 +1,0 @@
-{
-  "transactions": [
-    {
-      "rpc": "https://nova.arbitrum.io/rpc"
-    }
-  ]
-}
