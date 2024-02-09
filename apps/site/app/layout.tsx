@@ -9,8 +9,8 @@ import Script from "next/script";
 import { Flex } from "design-system/elements";
 
 export const metadata: Metadata = {
-  title: "River",
-  description: "Set information free",
+  title: "Network Protagonist",
+  // description: "Set information free",
 };
 
 export default function RootLayout({
