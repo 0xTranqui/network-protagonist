@@ -1,18 +1,13 @@
-import { Flex, Typography } from '@/design-system'
+import { Flex, Typography } from "@/design-system";
+import Link from "next/link";
 
 export function Footer() {
   return (
     <Flex className="absolute bottom-[20px] gap-2 w-full justify-start">
-      <Typography className="hover:cursor-pointer">
-        <span className="text-[14px]"></span>view on {' '}
-        <a
-          href="https://www.river.ph/channel/bafyreigav3dz3sstenuy3zhik6snbeasj7ntwecf7ffguuses5kevfipla"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          river.ph
-        </a>
+      <Link href="https://www.river.ph/channel/bafyreihuti6faf2z322aaodxs2gq4cvqoysraiz5gxjolmlwud3jemz2re"></Link>
+      <Typography className="hover:cursor-pointer text-[14px]">
+        view on river.ph
       </Typography>
     </Flex>
-  )
+  );
 }
