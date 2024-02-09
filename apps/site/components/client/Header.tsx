@@ -1,4 +1,4 @@
-import { Button, Flex, Typography } from '@/design-system'
+import { Button, Flex, Stack, Typography } from '@/design-system'
 import { RiverLogo } from '@/server'
 import { usePrivy } from '@privy-io/react-auth'
 import { useState } from 'react'
@@ -7,9 +7,22 @@ import { useParams } from 'next/navigation'
 import { useEffect } from 'react'
 import { getUserId } from 'gql/requests'
 import { Hex } from 'viem'
+import Link from 'next/link'
 
 export function Header() {
-  const [open, setOpen] = useState<boolean>(false)
+  
+  return (
+    <Flex className='border-[1px] border-blue-500 w-fit'>
+      {/* <Link> */}
+        <Typography>
+          networkprotagoni.st
+        </Typography>      
+      {/* </Link> */}
+    </Flex>
+  )
+
+
+
   // const { ready, login, authenticated } = usePrivy()
   // const { embeddedWallet, userId, username } = useUserContext()
 

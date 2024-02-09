@@ -32,7 +32,7 @@ const MarkdownRenderer: React.FC<Props> = ({ contentUrl }) => {
   }, [contentUrl])
 
   return (
-    <div className="flex justify-center items-center py-4">
+    <div className="flex justify-center md:items-center h-full">
       <div
         className="flex h-full w-full justify-center"
         // style={{ height: '90vh', maxWidth: '55vw' }}

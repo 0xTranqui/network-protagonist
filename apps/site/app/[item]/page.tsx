@@ -35,26 +35,28 @@ const PdfViewer = dynamic(
   { ssr: false }
 );
 
-export default async function ItemPage({ params }: { params: { id: string } }) {
+export default async function ItemPage({ params }: { params: { item: string } }) {
   const { channel } = await getChannelWithId({
     id: "bafyreigav3dz3sstenuy3zhik6snbeasj7ntwecf7ffguuses5kevfipla",
   });
 
-  console.log("channel:", channel);
-  console.log("channel.adds.items:", channel?.adds?.items);
+  console.log("params.id", params.item)
+
+  // console.log("channel:", channel);
+  // console.log("channel.adds.items:", channel?.adds?.items);
 
   const totalItems = channel?.adds?.items?.length ?? 0;
-  console.log("totla items:", totalItems);
-  const reversedIndex = totalItems - Number(params.id);
+  // console.log("totla items:", totalItems);
+  const reversedIndex = totalItems - Number(params.item);
   console.log("reversedIndex:", reversedIndex);
-  const itemToRender = channel?.adds?.items?.[0];
+  const itemToRender = channel?.adds?.items?.[reversedIndex];
   console.log("item to render:", itemToRender);
 
-  const { itemPage } = await getItemPage({
-    id: `${"bafyreigav3dz3sstenuy3zhik6snbeasj7ntwecf7ffguuses5kevfipla"}/${
-      itemToRender?.itemId
-    }`,
-  });
+  // const { itemPage } = await getItemPage({
+  //   id: `${"bafyreigav3dz3sstenuy3zhik6snbeasj7ntwecf7ffguuses5kevfipla"}/${
+  //     itemToRender?.itemId
+  //   }`,
+  // });
 
   const itemMetadata = await kv.get<Pick<MediaAssetObject, "value">["value"]>(
     itemToRender?.item.uri as string
@@ -128,8 +130,8 @@ export default async function ItemPage({ params }: { params: { id: string } }) {
     ));
 
   return (
-    <Stack className="h-[calc(100dvh-38px)] md:flex-row">
-      <div className="w-full h-full md:w-[78%]">{content}</div>
+    <Stack className="h-[calc(100dvh-38px)] md:flex-row border-2 border-green-500  md:items-center justify-center">
+      <div className="w-full h-full justify-center md:w-[78%]">{content}</div>
       {/* <div className="md:w-[22%]">
         <ItemSidebar
           // @ts-ignore

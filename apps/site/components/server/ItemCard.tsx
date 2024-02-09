@@ -1,9 +1,8 @@
-import { Flex, Stack, Typography } from '@/design-system'
+import { Stack, Typography } from '@/design-system'
 import { type Adds } from '@/gql'
 import { type MediaAssetObject, w3sUrlFromCid } from '@/lib'
 import { unixTimeConverter } from '@/utils'
 import { kv } from '@vercel/kv'
-import Image from 'next/image'
 import Link from 'next/link'
 
 export async function ItemCard({
