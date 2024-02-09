@@ -38,18 +38,18 @@ const MarkdownRenderer: React.FC<Props> = ({ contentUrl }) => {
         className="flex h-fit md:h-full w-full justify-center"
         // style={{ height: '90vh', maxWidth: '55vw' }}
       >
-        {isLoading ? (
+        {/* {isLoading ? (
           <div>Loading...</div>
-        ) : (
+        ) : ( */}
           <Editor
-            className={`${fragmentMono.variable} w-[400px]`}
-            style={{ fontFamily: fragmentMono.variable }}
+            className={`${fragmentMono.variable} w-[400px] border-2`}
+            // style={{ fontFamily: fragmentMono.variable }}
             // disableExtensions={['container_notice']}
             value={content}
             readOnly
             theme={customTheme}
           />
-        )}
+        {/* )} */}
       </div>
     </div>
   )

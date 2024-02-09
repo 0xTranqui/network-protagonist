@@ -22,10 +22,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fragmentMono.variable} text-[14px]`}
+      className={`${fragmentMono.variable} text-[16px]`}
       suppressHydrationWarning
     >
-      <body className="py-3 px-5">
+      <body className="px-5">
         <Header />
         {/* hidden on small screens         */}
         <Flex className="hidden md:flex items-start">

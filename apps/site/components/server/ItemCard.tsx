@@ -29,7 +29,7 @@ export async function ItemCard({
         href={`/${itemIndex}`}
         className="transition-all"
       >
-        <Typography className="hover:underline">
+        <Typography className="">
           {truncateText(itemMetadata?.name as string, 25, false) ?? 'untitled'}
         </Typography>        
       </Link>

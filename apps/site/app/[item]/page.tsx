@@ -38,7 +38,7 @@ const PdfViewer = dynamic(
 
 export default async function ItemPage({ params }: { params: { item: string } }) {
   const { channel } = await getChannelWithId({
-    id: "bafyreigav3dz3sstenuy3zhik6snbeasj7ntwecf7ffguuses5kevfipla",
+    id: "bafyreihuti6faf2z322aaodxs2gq4cvqoysraiz5gxjolmlwud3jemz2re",
   });
 
   console.log("params.id", params.item)
@@ -131,7 +131,7 @@ export default async function ItemPage({ params }: { params: { item: string } })
     ));
 
   return (
-    <Stack className="h-[calc(100dvh-76px)] place-content-start md:place-content-center md:flex-row">
+    <Stack className="h-full md:h-[calc(100dvh-76px)] place-content-start place-self-center md:place-content-center md:flex-row">
       <div className="w-full h-full md:w-[78%]">{content}</div>
       {/* <RecentItems /> */}
       {/* <div className="md:w-[22%]">

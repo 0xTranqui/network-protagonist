@@ -6,7 +6,7 @@ import { ItemCard } from './ItemCard'
 
 export async function RecentItems() {
   const { channel } = await getChannelWithId({
-    id: "bafyreigav3dz3sstenuy3zhik6snbeasj7ntwecf7ffguuses5kevfipla"
+    id: "bafyreihuti6faf2z322aaodxs2gq4cvqoysraiz5gxjolmlwud3jemz2re"
   })
 
   if (!channel || !channel.adds?.items || channel.adds?.items.length === 0) {
