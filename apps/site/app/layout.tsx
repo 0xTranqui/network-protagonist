@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fragmentMono.variable} text-[16px]`}
+      className={`${fragmentMono.variable} `}
       suppressHydrationWarning
     >
       <body className="px-5">
