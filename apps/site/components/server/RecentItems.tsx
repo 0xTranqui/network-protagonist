@@ -14,7 +14,7 @@ export async function RecentItems() {
   }
 
   return (
-    <Grid className="w-[150px] py-[50px] grid-cols-1 gap-[10px]">
+    <Grid className="w-[200px] py-[50px] md:py-[100px] grid-cols-1 gap-[10px]">
       {channel.adds.items.map((add, index: number) =>
         add.removed ? null : (
           <Link
