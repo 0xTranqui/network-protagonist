@@ -84,13 +84,13 @@ export default async function ItemPage({ params }: { params: { item: string } })
     .with(
       P.when((type) => isImage({ mimeType: type })),
       () => (
-        <div className="relative h-[450px] md:h-full">
+        <div className="relative h-[400px] md:h-full">
           <Image
             className="object-contain"
             src={contentUrl as string}
             alt={itemMetadata?.name as string}
             fill
-            quality={100}
+            quality={90}
             priority={true}
           />
         </div>
