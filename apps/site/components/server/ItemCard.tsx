@@ -30,7 +30,7 @@ export async function ItemCard({
         className="transition-all"
       >
         <Typography className="">
-          {truncateText(itemMetadata?.name as string, 25, false) ?? 'untitled'}
+          {truncateText(itemMetadata?.name as string, 20, false) ?? 'untitled'}
         </Typography>        
       </Link>
       {/* <Typography className="text-secondary-foreground">

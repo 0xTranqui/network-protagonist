@@ -35,14 +35,14 @@ const MarkdownRenderer: React.FC<Props> = ({ contentUrl }) => {
   return (
     <div className="flex h-fit justify-center md:h-full">
       <div
-        className="flex h-fit md:h-full w-full justify-center"
+        className="flex h-fit md:h-full w-full justify-start md:justify-center"
         // style={{ height: '90vh', maxWidth: '55vw' }}
       >
         {/* {isLoading ? (
           <div>Loading...</div>
         ) : ( */}
           <Editor
-            className={`${fragmentMono.variable} w-[400px] border-2`}
+            className={`${fragmentMono.variable} w-[350px] md:w-[400px] text-[12px]`}
             // style={{ fontFamily: fragmentMono.variable }}
             // disableExtensions={['container_notice']}
             value={content}

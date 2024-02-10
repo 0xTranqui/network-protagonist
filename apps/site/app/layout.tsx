@@ -9,6 +9,7 @@ import { Flex } from "design-system/elements";
 // import { Footer } from "@/server";
 import { RecentItems } from "components/server/RecentItems";
 
+
 export const metadata: Metadata = {
   title: "network protagonist",
   // description: "Set information free",
@@ -22,7 +23,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fragmentMono.variable} `}
+      className={`${fragmentMono.variable} text-[16px]`}
       suppressHydrationWarning
     >
       <body className="px-5">
